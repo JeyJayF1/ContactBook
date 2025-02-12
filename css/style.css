@@ -1,0 +1,138 @@
+.footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #343434;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    font-family: "Roboto", serif;
+    background-color: #EAEDF8;
+    margin: 0;
+}
+.main{
+    display: flex;
+}
+.menu{
+    width: 20%;
+    background-color: #746CF5;
+    margin-right: 32px;
+    padding-top: 150px;
+    height: 100vh;
+}
+
+.content{
+    width: 80%;
+    margin-top: 100px;
+    margin-right: 32px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.content ~ *{
+    margin-top: 4px;
+}
+
+.menu a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.menu img{
+    margin-right: 8px;
+}
+
+.menu a:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menubar{
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 80px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.avatar{
+    border-radius: 100%;
+    background-color: yellowgreen;
+    padding: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.myName{
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+    border-radius: 8px; 
+    padding: 16px;
+    padding-left: 64px;
+    position: relative;
+}
+
+.profile-picture{
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    left: 8px;
+    bottom: 10px;
+}
+
+.phone {
+    background-color: #746CF5;
+    text-decoration: none;
+    padding: 4px;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    text-align: center;
+}
+
+.delete{
+    background-color: #DC143C;
+    text-decoration: none;
+    padding: 4px;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    text-align: center;
+}
+
+.phone:hover {
+    background-color: #A9A4EB;
+}
+
+.add{
+    margin-top: 5px;
+}
