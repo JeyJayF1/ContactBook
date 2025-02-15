@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="form login">
+        <div class="form registration">
             <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-                <h1>Login</h1>
+                <h1>Registration</h1>
                 <div class="input-box">
                     <input type="text" placeholder="username" name="username">
                     <img src="img/person.svg">
@@ -25,7 +25,7 @@
         <div class="info_container">
             <div class="info">
                 <h1>Welcome!</h1>
-                <p>If you do not have an account go <a href="registration.php">here</a></p>
+                <p>Here you can register yourself.</p>
             </div>
         </div>
     </div>
