@@ -1,3 +1,6 @@
+<?php
+    include("database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +22,16 @@
                     <input type="password" placeholder="password" name="password">
                     <img src="img/password.svg">
                 </div>
-                <input class="btn" type="submit" name="login" value="login">
+                <input class="btn" type="submit" name="login" value="Register"><br><br>
+                <div class="output">
+                    <?php include("registration_logic.php"); ?>
+                </div>
             </form>
         </div>
         <div class="info_container">
             <div class="info">
                 <h1>Welcome!</h1>
-                <p>Here you can register yourself.</p>
+                <p>Already have an account? Login <a href="index.php">here</a></p>
             </div>
         </div>
     </div>

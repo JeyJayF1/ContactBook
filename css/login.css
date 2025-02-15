@@ -111,3 +111,9 @@ form {
     margin-bottom: 20px;
 
 }
+
+.output{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}

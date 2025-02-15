@@ -1,3 +1,6 @@
+<?php
+    include("database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,10 @@
                     <input type="password" placeholder="password" name="password">
                     <img src="img/password.svg">
                 </div>
-                <input class="btn" type="submit" name="login" value="login">
+                <input class="btn" type="submit" name="login" value="Login"><br><br>
+                <div class="output">
+                    <?php include("login_logic.php"); ?>
+                </div>
             </form>
         </div>
         <div class="info_container">
