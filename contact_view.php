@@ -34,6 +34,7 @@
                             while($row = mysqli_fetch_assoc($contacts)){
                                 $name = $row['name'];
                                 $phone = $row['phone'];
+                                $contact_id = $row['id'];
                                 
                                 echo "
                                 <div class='card'>
@@ -42,7 +43,7 @@
                                     $phone
 
                                     <a class='phone' href='tel:$phone'>Call</a>
-                                    <a class='delete' href='?page=delete'>Delete</a>
+                                    <a class='delete' href='?page=delete&contact=$contact_id'>Delete</a>
                                 </div>
                                 ";
                             }
@@ -89,13 +90,20 @@
 
                     }
                 } else if($_GET['page'] == 'delete'){
-                    echo "
-                    <p>You Contact got deleted</p>
-                    ";
+                    $contact_id = $_GET['contact'];
+                    $user_id = $_SESSION['user_id'];
 
-                    $delete = $_GET['delete'];
-                    array_splice($contacts, $delete, 1);
-                    file_put_contents('contacts.txt', json_encode($contacts, JSON_PRETTY_PRINT));
+                    $sql = "DELETE FROM contacts WHERE id = '$contact_id' AND user_id = '$user_id'";
+
+                    try{
+                        mysqli_query($conn, $sql);
+                        echo "
+                        <p>You Contact got deleted</p>
+                        ";
+                    }catch(mysqli_sql_exception){
+                        echo "Error deleting contact";
+                    }
+
                     
                 } else {
                     echo "
