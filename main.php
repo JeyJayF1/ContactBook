@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/random-color.css.php">
 
 </head>
 <body>
@@ -29,7 +30,15 @@
     <div class="menubar">
         <h1>My Contact Book</h1>
         <div class="myName">
-            <div class="avatar">J</div>Jason Fahlen
+            <div class="avatar">
+            <?php
+            $first_letter = mb_substr($_SESSION['user'], 0, 1);
+            echo "{$first_letter}";
+            ?>
+            </div>
+            <?php
+                 echo $_SESSION['user'];
+            ?>
         </div>
     </div>
     <div class="main">
