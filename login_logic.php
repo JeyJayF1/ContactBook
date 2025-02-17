@@ -15,7 +15,11 @@
                     $passwordDb = $row['password'];
 
                     if(password_verify($password, $passwordDb)){
-                        echo "Login successful";
+                        session_start();
+                        $_SESSION['user'] = $row['user']; 
+                        $_SESSION['user_id'] = $row['id'];
+
+                        echo "Hello {$_SESSION['user']}!";
                         header("refresh:2; url=main.php");
                     } else {
                         echo "Wrong password!";
@@ -25,4 +29,5 @@
                 }
         }
     }
+    mysqli_close($conn);
 ?>

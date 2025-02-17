@@ -18,7 +18,6 @@
                 header("refresh:2; url=index.php");
             }catch(mysqli_sql_exception){
                 echo "User already exist!";
-                return;
             }
         }
     }

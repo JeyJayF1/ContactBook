@@ -1,13 +1,3 @@
-.footer {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    background-color: #343434;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 body {
     font-family: "Roboto", serif;
     background-color: #EAEDF8;
@@ -135,4 +125,14 @@ body {
 
 .add{
     margin-top: 5px;
+}
+
+.footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #343434;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
