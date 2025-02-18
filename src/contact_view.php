@@ -1,5 +1,4 @@
 <?php 
-
                 $headline = 'Welcome';
                 
                 if($_GET['page'] == 'contacts'){

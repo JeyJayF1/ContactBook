@@ -1,5 +1,5 @@
 <?php
-    include("database.php");
+    include("src/database.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@
                 </div>
                 <input class="btn" type="submit" name="login" value="Register"><br><br>
                 <div class="output">
-                    <?php include("registration_logic.php"); ?>
+                    <?php include("src/registration_logic.php"); ?>
                 </div>
             </form>
         </div>

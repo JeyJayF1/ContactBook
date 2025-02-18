@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include("database.php");
+    include("src/database.php");
     if(!isset($_GET['page'])){
         header('Location: main.php?page=start');
         exit();
@@ -47,11 +47,11 @@
             <a href="main.php?page=addContact"><img src="img/add_circle.svg"> Add a Contact</a>
             <a href="main.php?page=contacts"><img src="img/menu.svg"> Contacts</a>
             <a href="main.php?page=legal"><img src="img/legal.svg"> Impressum</a>
-            <a href="logout.php"><img src="img/logout.svg"> Logout</a>
+            <a href="src/logout.php"><img src="img/logout.svg"> Logout</a>
         </div>
 
         <div class="content">
-            <?php include("contact_view.php"); ?>
+            <?php include("src/contact_view.php"); ?>
         </div>
     </div>
     <div class='footer'>
