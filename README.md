@@ -12,7 +12,7 @@ A simple PHP & MySQL web application that allows users to register, log in, and 
 
 ### Features:
 - ✅ User authentication (Registration/Login)
-- ✅ Add, delete and view contacts
+- ✅ Add, delete, edit and view contacts
 - ✅ MySQL database with foreign key relations
 - ✅ Session management for logged-in users
 

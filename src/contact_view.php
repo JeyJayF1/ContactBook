@@ -17,6 +17,10 @@
                     $headline = 'Deletion Page';
                 }
 
+                if($_GET['page'] == 'edit'){
+                    $headline = 'Here you can edit your contact';
+                }
+
 
                 echo '<h1>' . $headline . '</h1>';
 
@@ -42,6 +46,7 @@
                                     $phone
 
                                     <a class='phone' href='tel:$phone'>Call</a>
+                                    <a class='edit' href='?page=edit&contact=$contact_id'>Edit</a>
                                     <a class='delete' href='?page=delete&contact=$contact_id'>Delete</a>
                                 </div>
                                 ";
@@ -104,6 +109,26 @@
                     }
 
                     
+                } else if($_GET['page'] == 'edit'){
+                    $contact_id = $_GET['contact'];
+                    $user_id = $_SESSION['user_id'];
+
+                    echo "
+                    <form action='?page=edit' method='POST'>
+                        <div class='add'>
+                            <input placeholder='Enter the new name' name='name'>
+                        </div>
+
+                        <div class='add'>
+                            <input placeholder='Enter the new phone number' name='phone'>
+                        </div>
+
+                        <button class='add' type='submit'>Enter</button>
+                    </form>";
+
+                    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        
+                    }
                 } else {
                     echo "
                     <p>You are on the start page</p>

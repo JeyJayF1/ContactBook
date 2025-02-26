@@ -46,7 +46,7 @@
             <a href="main.php?page=start"><img src="img/home.svg"> Start</a>
             <a href="main.php?page=addContact"><img src="img/add_circle.svg"> Add a Contact</a>
             <a href="main.php?page=contacts"><img src="img/menu.svg"> Contacts</a>
-            <a href="main.php?page=legal"><img src="img/legal.svg"> Impressum</a>
+            <a href="main.php?page=legal"><img src="img/legal.svg"> Legal</a>
             <a href="src/logout.php"><img src="img/logout.svg"> Logout</a>
         </div>
 
@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class='footer'>
-        (C) 2025 Jason GmbH
+        (C) 2025
     </div>
 </body>
 </html>
