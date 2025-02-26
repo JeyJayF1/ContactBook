@@ -20,15 +20,45 @@ A simple PHP & MySQL web application that allows users to register, log in, and 
 ### Installation:
 1. Clone this repository.
 ```
-sh git clone https://github.com/JeyJayF1/discord-bot.git
+git clone https://github.com/JeyJayF1/discord-bot.git
 ```
 2. Navigate to the project folder
 ```
-sh cd 'folder-name'
+cd 'folder-name'
 ```
-4. Set up the MySQL database:
-  
-5. Start a local server (XAMPP, WAMP, etc...)
+3. Set up the MySQL database: (Create a contact_book database in phpmyadmin.)
+<div>
+
+a. User Table <br>
+```sql
+CREATE TABLE `contact_book`.`users`
+(`id` INT NOT NULL AUTO_INCREMENT ,
+`user` VARCHAR(25) NOT NULL ,
+`password` CHAR(255) NOT NULL ,
+`reg_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`id`), INDEX (`user`)) ENGINE = InnoDB;
 ```
-sh php -S localhost:8000
+
+b. Contact Table <br>
+```sql
+CREATE TABLE `contact_book`.`contacts`
+(`id` INT NOT NULL AUTO_INCREMENT ,
+`user_id` INT(255) NOT NULL ,
+`name` VARCHAR(255) NOT NULL ,
+`phone` VARCHAR(20) NOT NULL ,
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`id`), INDEX (`user_id`)) ENGINE = InnoDB;
+```
+
+c. Foreign Key Constraint
+```sql
+ALTER TABLE `contacts` ADD CONSTRAINT
+`user-contacts` FOREIGN KEY (`user_id`)
+REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+```
+</div>
+
+4. Start a local server (XAMPP, WAMP, etc...)
+```
+php -S localhost:8000
 ```
