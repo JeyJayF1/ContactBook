@@ -112,9 +112,9 @@
                 } else if($_GET['page'] == 'edit'){
                     $contact_id = $_GET['contact'];
                     $user_id = $_SESSION['user_id'];
-
+                    
                     echo "
-                    <form action='?page=edit' method='POST'>
+                    <form action='?page=edit&contact=$contact_id' method='POST'>
                         <div class='add'>
                             <input placeholder='Enter the new name' name='name'>
                         </div>
@@ -127,7 +127,17 @@
                     </form>";
 
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                        
+                        $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+                        $phone_number = filter_input(INPUT_POST, "phone", FILTER_SANITIZE_NUMBER_INT);
+
+                        $sql = "UPDATE contacts SET name = '$name', phone = '$phone_number' WHERE id = '$contact_id' AND user_id = '$user_id'";
+
+                        try{
+                            mysqli_query($conn, $sql);
+                            echo "<p>Contact got updated</p>";
+                        }catch(mysqli_sql_exception){
+                            echo "<p>Error updating this contact</p>";
+                        }
                     }
                 } else {
                     echo "
